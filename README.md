@@ -1,32 +1,30 @@
 # CNG351 Data Management and File Structures
 
-Five assignments covering database design, relational theory, SQL, file organization, and indexing.
+Database design and data-organization work built around several case studies, including METU NetRegister, ACM Fest, Desire for Velocity, and an online tutoring system.
 
-## Assignments
+## Data modeling
 
-### Assignment 1 - ER modeling
+The first stage models each system with Chen-notation ER diagrams. The designs identify entities, attributes, relationships, cardinalities, participation constraints, and assumptions. They are then extended with EER concepts such as specialization and generalization and mapped into relational schemas with primary and foreign keys.
 
-Chen-notation entity-relationship diagrams for four systems: METU NetRegister, ACM Fest, Desire for Velocity, and an online tutoring platform. The designs include assumptions, attributes, relationships, cardinalities, and participation constraints.
+## Relational design
 
-### Assignment 2 - EER design and logical mapping
+The schemas are checked against 1NF, 2NF, 3NF, and BCNF. Functional dependencies are used to explain each decomposition. Relational-algebra expressions cover filtering, projection, joins, and aggregation over the NetRegister database.
 
-Extended ER modeling with specialization and generalization, followed by mapping EER designs into relational schemas with clearly identified primary and foreign keys.
+## SQL implementation
 
-### Assignment 3 - Normalization and relational algebra
+The SQL work uses Oracle-style DDL and DML to create tables, define constraints, load data, and answer queries across the NetRegister and racing-game datasets.
 
-Step-by-step normalization to 3NF and BCNF using functional dependencies, plus relational-algebra queries over the METU NetRegister schema.
+## File structures and indexing
 
-### Assignment 4 - SQL revision
+The final part explores how records are stored and located on disk. It includes static hashing with chained overflow, extendible hashing with bucket splits, B+ tree search and deletion, clustering indexes, and secondary indexes.
 
-Oracle SQL practice using two case studies. The material covers schema creation, constraints, data loading, filtering, joins, and aggregation. This assignment was supplied as preparation for a follow-up quiz rather than a graded submission.
+## Topics
 
-### Assignment 5 - File structures and indexing
-
-Exercises on static hashing with chained overflow, extendible hashing, B+ tree search and deletion, clustering indexes, and secondary indexes.
-
-## Repository structure
-
-Each `AssignmentN/` directory contains the assignment specification, the submitted solution where applicable, and a focused README describing that assignment's contents.
+- ER and EER modeling
+- Relational schema design
+- Normalization and functional dependencies
+- Relational algebra and SQL
+- Hash files, B+ trees, and indexes
 
 ## Team
 
