@@ -1,30 +1,38 @@
-# CNG351 Data Management and File Structures
+# Database Design Examples
 
-Database design and data-organization work built around several case studies, including METU NetRegister, ACM Fest, Desire for Velocity, and an online tutoring system.
+Database modeling, querying, normalization, and indexing examples built around network registration, event management, online tutoring, and racing-game systems.
 
-## Data modeling
+## ER modeling example
 
-The first stage models each system with Chen-notation ER diagrams. The designs identify entities, attributes, relationships, cardinalities, participation constraints, and assumptions. They are then extended with EER concepts such as specialization and generalization and mapped into relational schemas with primary and foreign keys.
+Requirements are converted into Chen-notation ER diagrams with entities, attributes, relationships, cardinalities, and participation constraints. EER models add specialization and generalization before being mapped to relational tables.
 
-## Relational design
+```text
+Student -> owns -> Device -> has -> Registration
+Registration -> approved by -> Network Engineer
+```
 
-The schemas are checked against 1NF, 2NF, 3NF, and BCNF. Functional dependencies are used to explain each decomposition. Relational-algebra expressions cover filtering, projection, joins, and aggregation over the NetRegister database.
+## Normalization example
 
-## SQL implementation
+Functional dependencies are used to decompose large relations into 3NF and BCNF schemas while preserving the meaning of the data.
 
-The SQL work uses Oracle-style DDL and DML to create tables, define constraints, load data, and answer queries across the NetRegister and racing-game datasets.
+```text
+student_id -> student_phone, student_university
+course_id  -> course_name
+payment_id -> amount, date, lecture, course
+```
 
-## File structures and indexing
+## Querying example
 
-The final part explores how records are stored and located on disk. It includes static hashing with chained overflow, extendible hashing with bucket splits, B+ tree search and deletion, clustering indexes, and secondary indexes.
+Relational algebra and Oracle SQL are used for selections, projections, joins, and grouped reports across the sample databases.
 
-## Topics
+```sql
+SELECT model, os
+FROM Device;
+```
 
-- ER and EER modeling
-- Relational schema design
-- Normalization and functional dependencies
-- Relational algebra and SQL
-- Hash files, B+ trees, and indexes
+## Indexing example
+
+The repository also contains worked examples of chained hashing, extendible hashing, B+ tree search/deletion, clustering indexes, and secondary indexes.
 
 ## Team
 
