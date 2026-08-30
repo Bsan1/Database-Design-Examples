@@ -1,23 +1,29 @@
-# Database Design Examples
+# Database Systems Learning Projects
 
-Database modeling, querying, normalization, and indexing examples built around network registration, event management, online tutoring, and racing-game systems.
+A collection of technical projects exploring how databases are modeled, normalized, queried, and organized for efficient storage and retrieval.
 
-## ER modeling example
+## Entity-relationship modeling
 
-Requirements are converted into Chen-notation ER diagrams with entities, attributes, relationships, cardinalities, and participation constraints. EER models add specialization and generalization before being mapped to relational tables.
+System requirements are translated into Chen-notation ER diagrams with entities, attributes, relationships, cardinalities, and participation constraints. The models cover practical domains such as network registration and event management.
 
-This work demonstrates how real-world requirements become a database structure. The goal is to decide what data must be stored, how records relate to each other, and which constraints keep the model consistent.
+This project develops the ability to turn written requirements into a consistent conceptual data model before implementation begins.
 
 ```text
 Student -> owns -> Device -> has -> Registration
 Registration -> approved by -> Network Engineer
 ```
 
-## Normalization example
+## EER to relational mapping
 
-Functional dependencies are used to decompose large relations into 3NF and BCNF schemas while preserving the meaning of the data.
+Extended ER models introduce specialization and generalization, then map the resulting structure to relational tables with primary keys, foreign keys, and integrity constraints.
 
-Normalization is used here to reduce duplicated data and prevent update, insertion, and deletion anomalies. Each decomposition is justified through keys and functional dependencies rather than applied mechanically.
+The work connects high-level domain modeling with the concrete schemas used by relational database systems.
+
+## Normalization and relational algebra
+
+Functional dependencies are used to identify candidate keys and decompose relations into 3NF and BCNF. Relational algebra expressions then describe selections, projections, joins, and grouped operations over the resulting schemas.
+
+The project shows how normalization reduces duplicated data and prevents update, insertion, and deletion anomalies while preserving the meaning of the data.
 
 ```text
 student_id -> student_phone, student_university
@@ -25,24 +31,20 @@ course_id  -> course_name
 payment_id -> amount, date, lecture, course
 ```
 
-## Querying example
+## Oracle SQL and data modeling
 
-Relational algebra and Oracle SQL are used for selections, projections, joins, and grouped reports across the sample databases.
-
-These examples connect relational theory to practical querying: relational algebra describes the operation, while SQL expresses it in a form a database system can execute.
+An Oracle SQL dataset and supporting workbook model a network registration system. The material provides concrete data for exploring schema design, queries, constraints, and reporting.
 
 ```sql
 SELECT model, os
 FROM Device;
 ```
 
-## Indexing example
+## File structures and indexing
 
-The repository also contains worked examples of chained hashing, extendible hashing, B+ tree search/deletion, clustering indexes, and secondary indexes.
+Worked designs cover chained hashing, extendible hashing, B+ tree search and deletion, clustering indexes, and secondary indexes. They examine how storage structures affect the cost of lookup, insertion, and deletion operations.
 
-This section demonstrates how database systems locate records efficiently on disk and why the choice of file structure or index changes lookup, insertion, and deletion cost.
+## Contributors
 
-## Team
-
-- Barış Şan - 2526689
-- Bora Bedirhan Uyar - 2526788
+- Barış Şan
+- Bora Bedirhan Uyar
